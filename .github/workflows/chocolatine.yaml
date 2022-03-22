@@ -19,13 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.0.0
       - name: date
-        run: date
+        run: echo "::error file=.gitignore,title=Unwanted-File::INVALID_FILE"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:EpitechPromo2026/B-DOP-200-LIL-2-1-chocolatine-simon.riembault.git
+            ${{ env.MIRROR_URL }}
           ssh_private_key:
             ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
