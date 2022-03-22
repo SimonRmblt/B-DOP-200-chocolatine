@@ -1,4 +1,4 @@
-name: Mirroring
+name: Mirroring-epi
 
 on: [push]
 
