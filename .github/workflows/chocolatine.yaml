@@ -9,5 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.0.0
       - name: repo_branch
-        if: branches == 'ga-ignore-*'
+        branches:
+          - "**"
+          - "ga-ignore-*"
         run: date
