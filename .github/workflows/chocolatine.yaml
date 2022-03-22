@@ -21,6 +21,5 @@ jobs:
   clean:
     runs-on: ubuntu-latest
     steps:
-      id: check_repository_cleanliness
       - name: date
         run: date
