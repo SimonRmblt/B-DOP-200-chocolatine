@@ -6,5 +6,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.0.0
       - name: repo_branch
-        if: git branch --show-current != 'ga-ignore-*'
+        if: 'git branch --show-current' != 'ga-ignore-*'
         run: date
