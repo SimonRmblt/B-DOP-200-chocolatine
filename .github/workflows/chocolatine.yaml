@@ -18,9 +18,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.0
-  id: check_repository_cleanliness
-    clean:
-      runs-on: ubuntu-latest
-      steps:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      id: check_repository_cleanliness
       - name: date
         run: date
