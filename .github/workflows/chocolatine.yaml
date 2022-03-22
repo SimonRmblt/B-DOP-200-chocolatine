@@ -1,9 +1,9 @@
 name: Chocolatine
 
-on: [push, pull_request]
-  branches:
-    - "**"
-    - "ga-ignore-*"
+on: 
+  push:
+    branches-ignore:
+      - "ga-ignore-*"
 
 jobs:
   ignore-branch:
