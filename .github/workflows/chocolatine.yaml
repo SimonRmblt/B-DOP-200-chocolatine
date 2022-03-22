@@ -9,7 +9,7 @@ on:
       - "ga-ignore-*"
 
 env:
-  MIRROR_URL: "https://github.com/EpitechPromo2026/B-DOP-200-LIL-2-1-chocolatine-simon.riembault.git"
+  MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-LIL-2-1-chocolatine-simon.riembault.git"
   EXECUTABLES: "pushswap"
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.0.0
       - name: date
-        run: echo "::error file=.gitignore,title=Unwanted-File::INVALID_FILE"
+        run: echo "::error file=*.o,title=Unwanted-File::INVALID_FILE"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
