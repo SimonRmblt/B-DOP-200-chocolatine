@@ -1,4 +1,4 @@
-on: push, pull
+on: [push, pull_request]
 jobs:
   ignore-branch:
     runs-on: ubuntu-latest
