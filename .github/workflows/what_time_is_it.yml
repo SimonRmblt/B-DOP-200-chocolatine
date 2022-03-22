@@ -1,3 +1,7 @@
-on:
-  push:
-    run: date
+on: push
+jobs:
+  test:
+  runs-on: ubuntu-latest
+    steps:
+      - name: date
+      run: date
