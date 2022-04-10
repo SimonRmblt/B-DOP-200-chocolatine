@@ -54,7 +54,7 @@ jobs:
           do
             if test ! -x $binaries;
               then
-                echo "::error title=Build Error";
+                echo "::error title=Build Error,file=${binaries}::${binaries}";
                 exit 1;
             fi;
           done;
