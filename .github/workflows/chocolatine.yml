@@ -33,7 +33,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: make
-        run: make
+        run: ls
         timeout-minutes: 2
       - name: make clean
         run: make clean
@@ -50,7 +50,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: run_tests
-        run: make test_run
+        run: ls
         timeout-minutes: 2
 
   push_to_mirror:
