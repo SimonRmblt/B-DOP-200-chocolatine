@@ -21,7 +21,23 @@ jobs:
         with:
           fetch-depth: 0
       - name: check_repo_cleanliness
-        run: echo "::error title=Unwanted file detected,file=${$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")}::${$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")}";
+        run: for i in "$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")";do echo "::error title=Unwanted file detected,file=${i}::${i}";done
+
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.0
+        with:
+          fetch-depth: 0
+      - name: make
+        run: make
+        timeout-minutes: 2
+      - name: make clean
+        run: make clean
+      - name: check_exec
 
   run_tests:
     runs-on: ubuntu-latest
@@ -34,20 +50,8 @@ jobs:
           fetch-depth: 0
       - name: run_tests
         run: make test_run
+        timeout-minutes: 2
 
-  check_program_compilation:
-    runs-on: ubuntu-latest
-    container:
-      image: epitechcontent/epitest-docker:latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3.0.0
-        with:
-          fetch-depth: 0
-      - name: run_tests
-        run: make
-
-  ##check_program_compilation:
   push_to_mirror:
     runs-on: ubuntu-latest
     needs:
