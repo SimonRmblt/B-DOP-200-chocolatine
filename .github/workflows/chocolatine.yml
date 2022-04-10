@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: check_repo_cleanliness
-        run: for i in "$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")";do echo "::error title=Unwanted file detected,file=${i}::${i}";if [ i > 0 ]; then echo "::error title=Unwanted file detected,file=${i}::${i}";exit 1; fi;done
+        run: for i in "$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")";do echo "::error title=Unwanted file detected,file=${i}::${i}";echo "::error title=Unwanted file detected";done
 
   run_tests:
     runs-on: ubuntu-latest
