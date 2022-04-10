@@ -12,7 +12,7 @@ $(NAME):
 	touch make_complete
 
 clean:
-	rm make_complete
+	date
 
 tests_run:
 	tree

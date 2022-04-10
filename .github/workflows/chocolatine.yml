@@ -52,7 +52,7 @@ jobs:
           IFS = ,
           for binaries in $exec_list;
           do
-            if test ! -e $binaries;
+            if test ! -x $binaries;
               then echo "::error title=Build Error::";
               exit 1;
             fi;
