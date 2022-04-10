@@ -53,7 +53,7 @@ jobs:
           for binaries in $exec_list;
           do
             if test ! -x $binaries;
-              then echo "::error title=Build Error::";
+              then echo "::error title=Build Error";
               exit 1;
             fi;
           done;
