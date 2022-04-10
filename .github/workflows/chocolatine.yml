@@ -46,7 +46,17 @@ jobs:
       - name: make clean
         run: make clean
       - name: check_exec
-        run: date
+        run: |
+          exec_list = ${{env.EXECUTABLES}}
+          parse_sep = $IFS
+          IFS = ,
+          for binaries in $exec_list;
+          do
+            if test ! -e $binaries;
+              then echo "::error title=Build Error::";
+              exit 1;
+            fi;
+          done;
 
   run_tests:
     runs-on: ubuntu-latest
