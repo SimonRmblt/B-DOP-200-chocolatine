@@ -28,7 +28,8 @@ jobs:
               echo "::error title=Unwanted file detected,file=${i}::${i}";
               count = $((count + 1));
             if [ count > 0 ]; 
-              then exit 84;
+              then echo "$(count)";
+              exit 84;
             fi;
             done
 
