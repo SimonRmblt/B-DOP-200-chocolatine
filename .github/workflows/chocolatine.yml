@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
       - name: check_repo_cleanliness
         run: |
-            declare -i count;
+            local -i count;
             count=0;
             for i in "$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp")";
             do 
