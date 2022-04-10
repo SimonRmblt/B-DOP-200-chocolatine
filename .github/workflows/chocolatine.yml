@@ -26,8 +26,8 @@ jobs:
             do 
               echo "::error title=Unwanted file detected,file=${i}::${i}";
             done
-            count = $(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp" | wc -l)
-            if [ $count > 0 ]; 
+            number=$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp" | wc -l)
+            if [ ${number} > 0 ]; 
               then echo "$count";
               exit 84;
             fi;
