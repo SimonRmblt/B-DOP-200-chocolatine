@@ -33,6 +33,7 @@ jobs:
 
   check_program_compilation:
     runs-on: ubuntu-latest
+    name: Checks if the repository contains the right binary files and that these files are executable
     container:
       image: epitechcontent/epitest-docker:latest
     steps:
