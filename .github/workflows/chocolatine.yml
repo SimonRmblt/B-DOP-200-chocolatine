@@ -10,7 +10,7 @@ on:
 
 env:
   MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-LIL-2-1-chocolatine-simon.riembault.git"
-  EXECUTABLES: "pushswap"
+  EXECUTABLES: "pushswap,a.out"
 
 jobs:
   check_repository_cleanliness:
@@ -47,9 +47,9 @@ jobs:
         run: make clean
       - name: check_exec
         run: |
-          exec_list = ${{env.EXECUTABLES}}
-          parse_sep = $IFS
-          IFS = ,
+          exec_list=${{env.EXECUTABLES}}
+          parse_sep=$IFS
+          IFS=,
           for binaries in $exec_list;
           do
             if test ! -x $binaries;
