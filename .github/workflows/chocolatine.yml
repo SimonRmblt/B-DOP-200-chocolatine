@@ -38,6 +38,7 @@ jobs:
       - name: make clean
         run: make clean
       - name: check_exec
+        run: date
 
   run_tests:
     runs-on: ubuntu-latest
