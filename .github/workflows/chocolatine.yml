@@ -41,10 +41,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: make
-        run: make -C ../../
+        run: make
         timeout-minutes: 2
       - name: make clean
-        run: make clean -C ../../
+        run: make clean
       - name: check_exec
         run: date
 
@@ -58,7 +58,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: run_tests
-        run: make tests_run -C ../../
+        run: make tests_run
         timeout-minutes: 2
 
   push_to_mirror:
