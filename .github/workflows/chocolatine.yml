@@ -24,7 +24,7 @@ jobs:
       - name: check_repo_cleanliness
         run: |
             for i in $(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp");
-            do echo "::error title=Unwanted file detected,file=${i},line=0,col=0::${i}";
+            do echo "::error title=Unwanted file detected,file=${i}::${i}";
             done;
             number=$(find . -type f -name "*.o" -o -name "#*#" -o -name "*~" -o -name "*.a" -o -name "*.so" -o -iname "*pain_au_chocolat*" -o -name "*.gcno" -o -name "*.gcda" -o -name "*.gcov" -o -type d -name "tmp" | wc -l)
             if [ ${number} -gt 0 ];
