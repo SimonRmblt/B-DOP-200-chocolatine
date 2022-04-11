@@ -21,4 +21,4 @@ Then got on your repository's page and click on the 'action' tab. There you will
 
 ### Warning
 
-Make sure you have a Makefile with the correct tasks and that you change the binary names in the chocolatine.yml file!
+Make sure you have a Makefile with the correct tasks and that you change the binary names in the chocolatine.yml file! Also make sure you put the correct repository for the mirror push task.
